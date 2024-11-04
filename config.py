@@ -16,9 +16,9 @@ class ProdConfig(Config):
     FLASK_ENV = 'production'
     MY_TEST_VAR = os.getenv('TEST')
     SQLALCHEMY_DATABASE_URI = URL.create(
-        "mysql+pymysql",
-        username="",
-        password="",
-        host="localhost",
-        database="laravel",
+        drivername="mysql+pymysql",
+        username=os.getenv('my_USER_DB'),
+        password=os.getenv('my_PASSWORD_DB'),
+        host=os.getenv('HOST'),
+        database=os.getenv('DATABASE'),
     )
